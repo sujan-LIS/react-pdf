@@ -139,7 +139,7 @@ export type DocumentContextType = {
 export type PageContextType = {
   _className?: string;
   canvasBackground?: string;
-  customTextRenderer?: { searchFunc: CustomTextRenderer; searchText: string };
+  customTextRenderer?: CustomTextRenderer;
   devicePixelRatio?: number;
   onGetAnnotationsError?: OnGetAnnotationsError;
   onGetAnnotationsSuccess?: OnGetAnnotationsSuccess;

@@ -95,7 +95,7 @@ export type PageProps = {
    *
    * @example ({ str, itemIndex }) => str.replace(/ipsum/g, value => `<mark>${value}</mark>`)
    */
-  customTextRenderer?: { searchFunc: CustomTextRenderer; searchText: string };
+  customTextRenderer?: CustomTextRenderer;
   /**
    * The ratio between physical pixels and device-independent pixels (DIPs) on the current device.
    *
@@ -668,7 +668,7 @@ Page.propTypes = {
   children: PropTypes.node,
   className: isClassName,
   customRenderer: PropTypes.func,
-  customTextRenderer: PropTypes.any,
+  customTextRenderer: PropTypes.func,
   devicePixelRatio: PropTypes.number,
   error: isFunctionOrNode,
   height: PropTypes.number,

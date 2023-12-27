@@ -197,8 +197,8 @@ export default function TextLayer() {
     const cancellable = pdfjs.renderTextLayer(parameters);
     const runningTask = cancellable;
 
-    let searchedTextCount = 0;
-    const searchedTextPages: number[] = [];
+    // let searchedTextCount = 0;
+    // const searchedTextPages: number[] = [];
 
     cancellable.promise
       .then(() => {
@@ -222,13 +222,13 @@ export default function TextLayer() {
               return;
             }
 
-            const isMatch = item.str && item.str.includes(customTextRenderer.searchText);
-            if (isMatch) {
-              searchedTextCount += 1;
-              searchedTextPages.push(pageNumber);
-            }
+            // const isMatch = item.str && item.str.includes(customTextRenderer.searchText);
+            // if (isMatch) {
+            //   searchedTextCount += 1;
+            //   searchedTextPages.push(pageNumber);
+            // }
 
-            const content = customTextRenderer.searchFunc({
+            const content = customTextRenderer({
               pageIndex,
               pageNumber,
               itemIndex,
@@ -239,8 +239,8 @@ export default function TextLayer() {
           });
         }
 
-        console.log('Searched Text Count: ', searchedTextCount);
-        console.log('Searched Text pages: ', searchedTextPages);
+        // console.log('Searched Text Count: ', searchedTextCount);
+        // console.log('Searched Text pages: ', searchedTextPages);
 
         // Intentional immediate callback
         onRenderSuccess();
